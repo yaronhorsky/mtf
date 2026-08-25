@@ -1,10 +1,10 @@
 # Moveo Fintech Context
 
-This file is the development context for people building Moveo Fintech Tools. It is not meant to be installed globally into every coding agent by default. Use it when working on this repository or when intentionally continuing development of `mft`.
+This file is the development context for people building Moveo Fintech Tools. It is not meant to be installed globally into every coding agent by default. Use it when working on this repository or when intentionally continuing development of `moveo-fintech`.
 
 ## Product
 
-Moveo Fintech Tools, exposed through the `mft` CLI, is a collaborative knowledge-sharing tool for the Moveo fintech team.
+Moveo Fintech Tools, exposed through the `moveo-fintech` CLI, is a collaborative knowledge-sharing tool for the Moveo fintech team.
 
 The tool helps developers, QA engineers, and product managers share practical professional knowledge, including workflows, skills, debugging tips, bug-handling flows, QA practices, PM practices, and team-specific operating knowledge.
 
@@ -28,7 +28,7 @@ The tool helps developers, QA engineers, and product managers share practical pr
 
 ## Initial Architecture
 
-The MVP should use a Python CLI named `mft`.
+The MVP should use a Python CLI named `moveo-fintech`.
 
 The repository should eventually separate command handling from reusable core logic:
 
@@ -55,7 +55,7 @@ Setup should:
 - Ask for final confirmation before saving configuration.
 - Save configuration under `~/.moveo_fintech/`.
 - End with a message saying setup is done.
-- Tell the user they can change anything at any time using `mft setup edit`.
+- Tell the user they can change anything at any time using `moveo-fintech setup edit`.
 
 Detected agents should include:
 
@@ -79,7 +79,7 @@ The canonical skill should include:
 - `tags`.
 - `version`.
 
-The skill description is the marketplace one-liner shown by `mft skill list` and by interactive install selectors.
+The skill description is the marketplace one-liner shown by `moveo-fintech skill list` and by interactive install selectors.
 
 Allowed areas are:
 
@@ -101,21 +101,21 @@ Prefer:
 Initial skill commands:
 
 ```bash
-mft skill list
-mft skill show <skill-id>
-mft skill install
-mft skill install <skill-id>
-mft skill remove
-mft skill remove <skill-id>
-mft skill share <path>
-mft skill validate <path>
+moveo-fintech skill list
+moveo-fintech skill show <skill-id>
+moveo-fintech skill install
+moveo-fintech skill install <skill-id>
+moveo-fintech skill remove
+moveo-fintech skill remove <skill-id>
+moveo-fintech skill share <path>
+moveo-fintech skill validate <path>
 ```
 
 ## Install Rules
 
-`mft skill install` without a skill ID opens an interactive multi-select list of marketplace skills.
+`moveo-fintech skill install` without a skill ID opens an interactive multi-select list of marketplace skills.
 
-`mft skill install <skill-id>` installs one skill directly.
+`moveo-fintech skill install <skill-id>` installs one skill directly.
 
 Skills are installed into all agents configured for the user. The command should not expose per-skill agent support because skills are agent-agnostic.
 
@@ -129,9 +129,9 @@ Ask for confirmation before writing files.
 
 ## Remove Rules
 
-`mft skill remove` without a skill ID opens an interactive multi-select list of installed MFT skills.
+`moveo-fintech skill remove` without a skill ID opens an interactive multi-select list of installed MFT skills.
 
-`mft skill remove <skill-id>` removes one installed MFT skill.
+`moveo-fintech skill remove <skill-id>` removes one installed MFT skill.
 
 Remove from all configured agents. Do not include `--agent` for removal in the MVP.
 
@@ -143,7 +143,7 @@ Always show a removal summary and ask for approval before deleting files.
 
 ## Share Rules
 
-`mft skill share <path>` turns a local skill file or folder into a marketplace skill.
+`moveo-fintech skill share <path>` turns a local skill file or folder into a marketplace skill.
 
 Share should:
 
@@ -187,11 +187,11 @@ Autocomplete should be supported broadly.
 
 Required dynamic completions:
 
-- `mft skill show <tab>` should complete marketplace skill IDs.
-- `mft skill install <tab>` should complete marketplace skill IDs.
-- `mft skill remove <tab>` should complete installed MFT skill IDs.
-- `mft skill share <tab>` should use path completion.
-- `mft skill validate <tab>` should use path completion.
+- `moveo-fintech skill show <tab>` should complete marketplace skill IDs.
+- `moveo-fintech skill install <tab>` should complete marketplace skill IDs.
+- `moveo-fintech skill remove <tab>` should complete installed MFT skill IDs.
+- `moveo-fintech skill share <tab>` should use path completion.
+- `moveo-fintech skill validate <tab>` should use path completion.
 
 ## Repository Rules
 

@@ -1,6 +1,6 @@
 # Moveo Fintech Tools
 
-`mft` is a collaborative tool for sharing professional knowledge across the Moveo fintech team.
+`moveo-fintech` is a collaborative tool for sharing professional knowledge across the Moveo fintech team.
 
 It is designed for developers, QA engineers, and product managers who want a shared place for practical workflows, skills, debugging tips, bug-handling flows, QA practices, PM practices, and other team knowledge.
 
@@ -17,7 +17,7 @@ This prepares Python, pipx, dependencies, shell completion, and then runs setup.
 You can change setup later with:
 
 ```bash
-mft setup edit
+moveo-fintech setup edit
 ```
 
 ## Dependencies 🧰
@@ -49,17 +49,17 @@ MFT can then adapt and install those skills into supported agents such as Claude
 ## Planned Commands 🧭
 
 ```bash
-mft setup
-mft setup edit
-mft whoami
-mft skill list
-mft skill show <skill-id>
-mft skill install
-mft skill install <skill-id>
-mft skill remove
-mft skill remove <skill-id>
-mft skill share <path>
-mft skill validate <path>
+moveo-fintech setup
+moveo-fintech setup edit
+moveo-fintech whoami
+moveo-fintech skill list
+moveo-fintech skill show <skill-id>
+moveo-fintech skill install
+moveo-fintech skill install <skill-id>
+moveo-fintech skill remove
+moveo-fintech skill remove <skill-id>
+moveo-fintech skill share <path>
+moveo-fintech skill validate <path>
 ```
 
 Every command and subcommand should support `--help`.
@@ -77,7 +77,7 @@ Setup starts with colorful `MOVEO FINTECH` ASCII art.
 Anything can be changed later with:
 
 ```bash
-mft setup edit
+moveo-fintech setup edit
 ```
 
 ## CONTEXT.md 📘

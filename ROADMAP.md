@@ -4,38 +4,38 @@ This roadmap captures the first implementation target and the larger ideas that 
 
 ## MVP
 
-- Create a Python CLI named `mft`.
+- Create a Python CLI named `moveo-fintech`.
 - Provide a one-line installer using `curl ... | bash`.
-- Run `mft setup` automatically after installation.
+- Run `moveo-fintech setup` automatically after installation.
 - Start setup with colorful `MOVEO FINTECH` ASCII art.
 - Derive the user's name, email, and installed agents automatically.
 - Prompt for required missing identity information.
 - Present the derived setup summary and ask for confirmation.
 - Ask for the user's role after identity confirmation.
 - Confirm the final setup before writing configuration.
-- Support `mft setup edit` for changing setup at any time.
+- Support `moveo-fintech setup edit` for changing setup at any time.
 - Store local user configuration under `~/.moveo_fintech/`.
 - Detect Claude, Kiro, and OpenCode global configurations.
 - Treat skills as agent-agnostic knowledge artifacts.
 - Maintain a repo-backed skill registry.
 - Show each skill's one-line description from the registry.
-- Support `mft skill list`.
-- Support `mft skill show <skill-id>`.
-- Support `mft skill install` with an interactive multi-select list.
-- Support `mft skill install <skill-id>` for direct installs.
+- Support `moveo-fintech skill list`.
+- Support `moveo-fintech skill show <skill-id>`.
+- Support `moveo-fintech skill install` with an interactive multi-select list.
+- Support `moveo-fintech skill install <skill-id>` for direct installs.
 - Install skills globally into all configured agents.
 - Generate agent-specific adaptations at install time when needed.
 - Support Claude global skills.
 - Support Kiro global steering files.
 - Support OpenCode global skills.
 - Track installed skills in local MFT state.
-- Support `mft skill remove` with an interactive multi-select list of installed skills.
-- Support `mft skill remove <skill-id>`.
+- Support `moveo-fintech skill remove` with an interactive multi-select list of installed skills.
+- Support `moveo-fintech skill remove <skill-id>`.
 - Remove skills from all configured agents.
 - Remove only skills that were installed through MFT.
 - Detect local changes before removing installed skill files.
 - Prompt for approval before committing removals.
-- Support `mft skill share <path>`.
+- Support `moveo-fintech skill share <path>`.
 - Validate skills as part of `share`.
 - Prompt for missing skill metadata during `share`.
 - Show a share summary and ask for confirmation before adding the skill.
@@ -86,15 +86,15 @@ This roadmap captures the first implementation target and the larger ideas that 
 - Add unit tests for OpenCode adapter rendering.
 - Add CLI tests for top-level help.
 - Add CLI tests for every command and subcommand help output.
-- Add CLI tests for `mft setup`.
-- Add CLI tests for `mft setup edit`.
-- Add CLI tests for `mft skill list`.
-- Add CLI tests for `mft skill show <skill-id>`.
-- Add CLI tests for `mft skill install`.
-- Add CLI tests for `mft skill install <skill-id>`.
-- Add CLI tests for `mft skill remove`.
-- Add CLI tests for `mft skill remove <skill-id>`.
-- Add CLI tests for `mft skill share <path>`.
+- Add CLI tests for `moveo-fintech setup`.
+- Add CLI tests for `moveo-fintech setup edit`.
+- Add CLI tests for `moveo-fintech skill list`.
+- Add CLI tests for `moveo-fintech skill show <skill-id>`.
+- Add CLI tests for `moveo-fintech skill install`.
+- Add CLI tests for `moveo-fintech skill install <skill-id>`.
+- Add CLI tests for `moveo-fintech skill remove`.
+- Add CLI tests for `moveo-fintech skill remove <skill-id>`.
+- Add CLI tests for `moveo-fintech skill share <path>`.
 - Add fixture-based tests for valid and invalid skills.
 - Add smoke tests for the install script.
 - Add shell completion tests where practical.
