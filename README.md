@@ -6,7 +6,7 @@ It is designed for developers, QA engineers, and product managers who want a sha
 
 Created from Yaron's excellent instinct that team knowledge should be easy to share, easy to install, and useful for both technical and non-technical teammates.
 
-## Installation
+## Installation 🚀
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/<org>/moveo_fintech/master/scripts/install.sh | bash
@@ -20,7 +20,7 @@ You can change setup later with:
 mft setup edit
 ```
 
-## Dependencies
+## Dependencies 🧰
 
 The CLI is built with Python.
 
@@ -38,7 +38,7 @@ The core Python packages are expected to include:
 - questionary.
 - PyYAML.
 
-## What MFT Does
+## What MFT Does 💡
 
 The first product area is the skill marketplace.
 
@@ -46,7 +46,7 @@ Skills are agent-agnostic professional knowledge artifacts. A skill can describe
 
 MFT can then adapt and install those skills into supported agents such as Claude, Kiro steering, and OpenCode.
 
-## Planned Commands
+## Planned Commands 🧭
 
 ```bash
 mft setup
@@ -66,7 +66,7 @@ Every command and subcommand should support `--help`.
 
 Autocomplete should work out of the box where possible, including skill IDs and installed skill IDs.
 
-## Setup
+## Setup ✨
 
 Setup runs automatically after installation.
 
@@ -80,17 +80,7 @@ Anything can be changed later with:
 mft setup edit
 ```
 
-## Skills
-
-Skills are stored as canonical, agent-agnostic knowledge artifacts.
-
-The skill description is the one-line marketplace summary shown in `mft skill list` and the interactive install selector.
-
-MFT installs skills globally into the user's configured agents.
-
-Removing a skill removes only skills that were installed through MFT.
-
-## CONTEXT.md
+## CONTEXT.md 📘
 
 `CONTEXT.md` is the development context for people building MFT itself.
 
@@ -98,26 +88,14 @@ It explains the product rules, setup behavior, skill model, CLI UX principles, a
 
 It is not meant to be globally loaded into every coding agent by default. Use it when intentionally working on this repository.
 
-## Roadmap
+## Roadmap 🗺️
 
 See `ROADMAP.md` for the MVP scope, deferred ideas, and testing roadmap.
 
-## Contributing
+## Contributing 🤝
 
 MFT is intended to be a collaborative team tool.
 
 Contributions, pull requests, issues, improvement ideas, and new shared skills are welcome.
 
 If you see a workflow, debugging trick, QA checklist, PM practice, or bug-handling pattern that could help the team, this project should make it easy to share.
-
-## Repository Rules
-
-The intended repository workflow is:
-
-- No direct pushes to `master`.
-- Work through feature branches.
-- Pull requests are required.
-- Pull requests require approval before merge.
-- Repository protection rules will be configured later.
-
-GitHub branch protection and approval rules will be set up later, including preventing direct pushes to `master` and requiring approved pull requests.
