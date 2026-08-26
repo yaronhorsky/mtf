@@ -203,10 +203,12 @@ Use this model:
 
 - One issue per task.
 - One branch per issue.
-- One worktree per branch when working in parallel.
+- Use worktrees when working in parallel, running multiple agents, or isolating risky work.
 - One pull request per issue.
 
 Do not work directly on `master`.
+
+For small sequential fixes, a normal feature branch in the current checkout is acceptable when the worktree is clean and no other agent is using it.
 
 When given a GitHub issue URL:
 
@@ -241,7 +243,21 @@ cd ../moveo_fintech.git
 git worktree add ../moveo_fintech-<short-name> -b feature/<branch-name> master
 ```
 
-If already inside a task-specific worktree, continue there.
+If already inside a task-specific worktree, continue there. If the task is small and sequential, a regular feature branch in the current checkout is fine.
+
+Use a worktree when:
+
+- Multiple agents or humans are working in parallel.
+- The user explicitly asks for parallel work.
+- The task may take time and should not block the main checkout.
+- The task needs isolated dependencies, generated files, or experiments.
+
+A worktree is optional when:
+
+- The task is a small sequential fix.
+- Only one agent is working.
+- The current checkout is clean.
+- The branch can be created safely in the current directory.
 
 ## Repository Rules
 

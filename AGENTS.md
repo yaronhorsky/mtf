@@ -10,7 +10,7 @@ Follow the workflow in `CONTEXT.md`:
 
 - One issue per task.
 - One branch per issue.
-- One worktree per branch when working in parallel.
+- Use worktrees for parallel work. For small sequential fixes, a normal feature branch is fine.
 - One pull request per issue.
 
 Do not work directly on `master`.
