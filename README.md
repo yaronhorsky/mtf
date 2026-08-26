@@ -9,10 +9,16 @@ Created from Yaron's excellent instinct that team knowledge should be easy to sh
 ## Installation 🚀
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/<org>/moveo_fintech/master/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/yaronhorsky/mtf/master/scripts/install.sh | bash
 ```
 
-This prepares Python, pipx, dependencies, shell completion, and then runs setup.
+This prepares Python, pipx, dependencies, shell completion, and then runs setup automatically.
+
+After installation, `moveo-fintech` and tab completion should be available in new terminal sessions. If your current shell does not see them yet, open a new terminal or run:
+
+```bash
+rehash
+```
 
 You can change setup later with:
 
