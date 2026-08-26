@@ -197,6 +197,17 @@ Required dynamic completions:
 
 Development should happen on feature branches.
 
+Agents should read `AGENTS.md` for startup instructions before implementing changes.
+
+Preferred development workflow:
+
+- One GitHub issue per task.
+- One branch per issue.
+- One worktree per branch when working in parallel.
+- One pull request per issue.
+
+Do not work directly on `master`.
+
 The intended GitHub setup is:
 
 - No direct pushes to `master`.
