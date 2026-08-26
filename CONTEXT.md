@@ -203,21 +203,38 @@ Use this model:
 
 - One issue per task.
 - One branch per issue.
-- One worktree per branch when working in parallel.
+- Use worktrees when working in parallel, running multiple agents, or isolating risky work.
 - One pull request per issue.
 
 Do not work directly on `master`.
+
+For small sequential fixes, a normal feature branch in the current checkout is acceptable when the worktree is clean and no other agent is using it.
 
 When given a GitHub issue URL:
 
 1. Read the issue body and acceptance criteria.
 2. Read this file.
 3. Read `ROADMAP.md` only to understand deferred work and future direction.
-4. Confirm the current branch matches the issue's suggested branch.
-5. Implement only the issue scope.
-6. Do not implement out-of-scope items.
-7. Run the verification commands from the issue.
-8. Summarize changed files and test results.
+4. Check the issue dependency status and blockers.
+5. Confirm the current branch matches the issue's suggested branch.
+6. Implement only the issue scope.
+7. Do not implement out-of-scope items.
+8. Run the verification commands from the issue.
+9. Summarize changed files and test results.
+
+## Dependency Guardrail
+
+Before implementing a GitHub issue, check whether the issue is blocked.
+
+Do not implement an issue if:
+
+- It has a `status:blocked` label.
+- Its `Dependency status` section says it is blocked.
+- Its `Blocked by` section lists open issues.
+
+If the issue is blocked, stop and report the blockers instead of writing code.
+
+Only implement issues that are explicitly ready, either by a `status:ready` label or a `Dependency status` section that says `Ready now`.
 
 When working in parallel, prefer worktrees created from the bare repository:
 
@@ -226,7 +243,21 @@ cd ../moveo_fintech.git
 git worktree add ../moveo_fintech-<short-name> -b feature/<branch-name> master
 ```
 
-If already inside a task-specific worktree, continue there.
+If already inside a task-specific worktree, continue there. If the task is small and sequential, a regular feature branch in the current checkout is fine.
+
+Use a worktree when:
+
+- Multiple agents or humans are working in parallel.
+- The user explicitly asks for parallel work.
+- The task may take time and should not block the main checkout.
+- The task needs isolated dependencies, generated files, or experiments.
+
+A worktree is optional when:
+
+- The task is a small sequential fix.
+- Only one agent is working.
+- The current checkout is clean.
+- The branch can be created safely in the current directory.
 
 ## Repository Rules
 
