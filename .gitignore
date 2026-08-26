@@ -1,5 +1,6 @@
 opencode-debug.json
 *.egg-info/
+build/
 __pycache__/
 .pytest_cache/
 .venv/
