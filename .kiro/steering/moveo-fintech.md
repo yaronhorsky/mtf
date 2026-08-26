@@ -15,7 +15,9 @@ Follow the workflow in `CONTEXT.md`:
 
 Do not work directly on `master`.
 
-When given a GitHub issue URL, read the issue body and acceptance criteria, confirm the branch matches the suggested branch, implement only the issue scope, run verification, and summarize changed files and test results.
+When given a GitHub issue URL, read the issue body and acceptance criteria, check dependency status, confirm the branch matches the suggested branch, implement only the issue scope, run verification, and summarize changed files and test results.
+
+Do not implement blocked issues. If an issue has `status:blocked`, says `Dependency status: Blocked`, or lists open blockers, stop and report the blockers instead of writing code.
 
 Important reminders:
 

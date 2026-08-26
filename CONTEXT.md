@@ -213,11 +213,26 @@ When given a GitHub issue URL:
 1. Read the issue body and acceptance criteria.
 2. Read this file.
 3. Read `ROADMAP.md` only to understand deferred work and future direction.
-4. Confirm the current branch matches the issue's suggested branch.
-5. Implement only the issue scope.
-6. Do not implement out-of-scope items.
-7. Run the verification commands from the issue.
-8. Summarize changed files and test results.
+4. Check the issue dependency status and blockers.
+5. Confirm the current branch matches the issue's suggested branch.
+6. Implement only the issue scope.
+7. Do not implement out-of-scope items.
+8. Run the verification commands from the issue.
+9. Summarize changed files and test results.
+
+## Dependency Guardrail
+
+Before implementing a GitHub issue, check whether the issue is blocked.
+
+Do not implement an issue if:
+
+- It has a `status:blocked` label.
+- Its `Dependency status` section says it is blocked.
+- Its `Blocked by` section lists open issues.
+
+If the issue is blocked, stop and report the blockers instead of writing code.
+
+Only implement issues that are explicitly ready, either by a `status:ready` label or a `Dependency status` section that says `Ready now`.
 
 When working in parallel, prefer worktrees created from the bare repository:
 
