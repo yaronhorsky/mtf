@@ -1,6 +1,6 @@
-# OpenCode Project Instructions
+# Moveo Fintech Project Instructions
 
-This file is the OpenCode project bootstrap for Moveo Fintech Tools.
+This file is the Kiro steering bootstrap for Moveo Fintech Tools.
 
 Before making changes, read `CONTEXT.md`. It is the canonical source of truth for product rules, architecture, workflow, CLI UX, setup behavior, skills, autocomplete, and repository conventions.
 

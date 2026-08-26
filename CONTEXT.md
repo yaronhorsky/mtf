@@ -1,6 +1,8 @@
 # Moveo Fintech Context
 
-This file is the development context for people building Moveo Fintech Tools. It is not meant to be installed globally into every coding agent by default. Use it when working on this repository or when intentionally continuing development of `moveo-fintech`.
+This file is the canonical development context for people building Moveo Fintech Tools. Agent-specific project files such as `AGENTS.md`, `CLAUDE.md`, and Kiro steering files should point here instead of duplicating these rules.
+
+This context is for development of this repository. It is not meant to be installed globally into every coding agent by default.
 
 ## Product
 
@@ -193,20 +195,40 @@ Required dynamic completions:
 - `moveo-fintech skill share <tab>` should use path completion.
 - `moveo-fintech skill validate <tab>` should use path completion.
 
-## Repository Rules
+## Development Workflow
 
-Development should happen on feature branches.
+Development should happen through GitHub issues, feature branches, and pull requests.
 
-Agents should read `AGENTS.md` for startup instructions before implementing changes.
+Use this model:
 
-Preferred development workflow:
-
-- One GitHub issue per task.
+- One issue per task.
 - One branch per issue.
 - One worktree per branch when working in parallel.
 - One pull request per issue.
 
 Do not work directly on `master`.
+
+When given a GitHub issue URL:
+
+1. Read the issue body and acceptance criteria.
+2. Read this file.
+3. Read `ROADMAP.md` only to understand deferred work and future direction.
+4. Confirm the current branch matches the issue's suggested branch.
+5. Implement only the issue scope.
+6. Do not implement out-of-scope items.
+7. Run the verification commands from the issue.
+8. Summarize changed files and test results.
+
+When working in parallel, prefer worktrees created from the bare repository:
+
+```bash
+cd ../moveo_fintech.git
+git worktree add ../moveo_fintech-<short-name> -b feature/<branch-name> master
+```
+
+If already inside a task-specific worktree, continue there.
+
+## Repository Rules
 
 The intended GitHub setup is:
 
@@ -215,6 +237,20 @@ The intended GitHub setup is:
 - Pull requests are required.
 - Pull requests require approval before merge.
 - Repository ownership and approval rules will be configured later.
+
+Do not modify unrelated user changes.
+
+## Agent Project Files
+
+Agent-specific project files are bootstraps only.
+
+Use:
+
+- `AGENTS.md` for OpenCode.
+- `CLAUDE.md` for Claude.
+- `.kiro/steering/moveo-fintech.md` for Kiro.
+
+These files should instruct the agent to read this `CONTEXT.md` file and check `ROADMAP.md`. They should not become independent sources of truth.
 
 ## Deferred Ideas
 
